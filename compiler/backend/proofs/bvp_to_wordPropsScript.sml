@@ -157,6 +157,7 @@ val reachable_refs_def = Define `
 val RefBlock_def = Define `
   RefBlock xs = DataElement xs (LENGTH xs) (RefTag,[])`;
 
+
 val bc_ref_inv_def = Define `
   bc_ref_inv conf n refs (f,heap,be) =
     case (FLOOKUP f n, FLOOKUP refs n) of
