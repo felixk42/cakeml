@@ -119,7 +119,6 @@ val v_size_LEMMA = prove(
 val v_inv_def = tDefine "v_inv" `
   (v_inv (Number i) (x,f,heap:'a ml_heap) <=>
      if small_int (:'a) i then (x = Data (Word (Smallnum i))) else
-       F /\ (* TODO: remove this line, so that bignums are allowed *)
        ?ptr. (x = Pointer ptr (Word 0w)) /\
              (heap_lookup ptr heap = SOME (Bignum i))) /\
   (v_inv (Word64 w) (x,f,heap) <=>
